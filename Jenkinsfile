@@ -9,4 +9,12 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            mail to: guerrero191096@unis.edu.gt, subject:'La build fue exitosa'
+        }
+        failure {
+            mail to: guerrero191096@unis.edu.gt, subject:'Ocurrio un fallo en el pipeline'
+        }
+    }
 }
