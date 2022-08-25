@@ -11,7 +11,7 @@ pipeline {
     }
     post {
         success {
-            mail to: 'guerrero191096@unis.edu.gt', subject:'La build fue exitosa :)', body: 'Jenkins'
+            mail to: 'guerrero191096@unis.edu.gt', subject:'La build fue exitosa :) ', body: 'Jenkins'
         }
         failure {
             mail to: 'guerrero191096@unis.edu.gt', subject:'Ocurrio un fallo en el pipeline :(', body: 'Jenkins'
