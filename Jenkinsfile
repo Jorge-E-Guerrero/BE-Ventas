@@ -11,10 +11,10 @@ pipeline {
     }
     post {
         success {
-            mail to: 'guerrero191096@unis.edu.gt', subject:'La build fue exitosa :) 123456', body: 'Jenkins Prueba pull request23 Pipeline corregido'
+            mail to: 'jflores@unis.edu.gt', subject:'La build fue exitosa :) 123456', body: 'Jenkins Prueba pull request23 Pipeline corregido'
         }
         failure {
-            mail to: 'guerrero191096@unis.edu.gt', subject:'Ocurrio un fallo en el pipeline :(', body: 'Jenkins'
+            mail to: 'jflores@unis.edu.gt', subject:'Ocurrio un fallo en el pipeline :(', body: 'Jenkins'
         }
     }
 }
