@@ -204,7 +204,6 @@ public class InventarioControlador {
 		Inventario _n = n.get();
 		
 
-
 		
 		if(nOperacion.equals("Agregar")) {
 			
