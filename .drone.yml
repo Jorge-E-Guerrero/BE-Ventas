@@ -1,5 +1,10 @@
 kind: pipeline
+type: docker
 name: default
+
+platform:
+  arch: amd64
+  os: windows
 
 steps:
 - name: test
