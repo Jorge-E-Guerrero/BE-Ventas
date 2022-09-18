@@ -2,14 +2,19 @@ kind: pipeline
 type: docker
 name: default
 
-platform:
-  arch: amd64
-  os: windows
+#platform:
+  #arch: amd64
+  #os: windows
+
 
 steps:
-- name: test
-  #image: maven:3-jdk-10
+- name: test_drone
+  image: alpine:3.9
   commands:
-  - echo '123'
+  - echo "Hello world"
+
+
+  #image: maven:3-jdk-10
+
   #- mvn install
   #- mvn clean verify sonar:sonar -Dsonar.projectKey=SpringBoot -Dsonar.login=sqp_8d1a89321dff2d5154c59015e25d26a352ef8e52
