@@ -31,7 +31,7 @@ steps:
         from_secret: EMAIL_PASSWORD
       from: "Sistema de Ventas <sistemadeventas@drone.com>"
       recipients:
-        - jflores@unis.edu.gt
+        - guerrero191096@unis.edu.gt
       subject: "Error de Drone CI Pipeline: Build #${DRONE_BUILD_NUMBER}"
       body: "El build <b>#${DRONE_BUILD_NUMBER}</b> ha fallado en el branch <b>${DRONE_COMMIT_BRANCH}</b> a causa del Quality Gate de SonarQube.<br><br>Por favor, corrija los errores antes de intentarlo de nuevo."
     when:
