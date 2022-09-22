@@ -11,10 +11,10 @@ pipeline {
     }
     post {
         success {
-            mail to: 'guerrero191096@unis.edu.gt', subject:'La build fue exitosa en el pipeline de la branch ${BRANCH_NAME}', body: 'Jenkins Pipeline, Numero de build ${env.BUILD_NUMBER} Prueba'
+            mail to: 'guerrero191096@unis.edu.gt', subject:'La build fue exitosa en el pipeline de la branch '${env.BRANCH_NAME}, body: 'Jenkins Pipeline, Numero de build ${env.BUILD_NUMBER} Prueba'
         }
         failure {
-            mail to: 'guerrero191096@unis.edu.gt', subject:'Ocurrio un fallo en el pipeline de la branch ${BRANCH_NAME}', body: 'Jenkins Pipeline, Numero de build ${env.BUILD_NUMBER}'
+            mail to: 'guerrero191096@unis.edu.gt', subject:'Ocurrio un fallo en el pipeline de la branch'${env.BRANCH_NAME}, body: 'Jenkins Pipeline, Numero de build ${env.BUILD_NUMBER}'
         }
     }
 }
