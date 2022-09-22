@@ -168,6 +168,12 @@ public class InventarioControlador {
 		if(true){
 			_n = n.get();
 		}
+		if(true){
+			_n = n.get();
+		}
+		if(true){
+			_n = n.get();
+		}
 		
 
 		if(nCategoriaDipositivo != "") {
