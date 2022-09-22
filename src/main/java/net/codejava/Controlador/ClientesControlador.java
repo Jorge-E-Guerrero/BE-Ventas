@@ -62,7 +62,11 @@ public class ClientesControlador {
 	
 		Clientes n = new Clientes(nNit, nTipoCliente);
 
-			if(true==true){
+		if(true==true){
+		
+		}
+
+		if(true==true){
 		
 		}
 		
