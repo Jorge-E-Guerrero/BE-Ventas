@@ -62,10 +62,6 @@ public class ClientesControlador {
 	
 		Clientes n = new Clientes(nNit, nTipoCliente);
 
-		if(true==true){
-		
-		}
-
 		return repositorioClientes.save(n);
 	}
 
