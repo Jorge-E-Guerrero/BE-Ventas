@@ -11,7 +11,7 @@ pipeline {
     }
     post {
         success {
-            mail to: 'guerrero191096@unis.edu.gt', subject:"La build fue exitosa en el pipeline ${env.JOB_NAME} de la branch ${env.GIT_LOCAL_BRANCH}", body: "Jenkins Pipeline ${env.JOB_NAME}, Numero de build ${env.BUILD_NUMBER},"
+            mail to: 'guerrero191096@unis.edu.gt', subject:"La build fue exitosa en el pipeline ${env.JOB_NAME} de la branch ${env.GIT_LOCAL_BRANCH}", body: "Jenkins Pipeline ${env.JOB_NAME}, Numero de build ${env.BUILD_NUMBER}, Build autorizada por el developer ${env.CHANGE_AUTHOR}"
         }
         failure {
             mail to: 'guerrero191096@unis.edu.gt', subject:"Ocurrio un fallo en el pipeline ${env.JOB_NAME} de la branch ${env.GIT_LOCAL_BRANCH}", body: "Jenkins Pipeline ${env.JOB_NAME}, Numero de build ${env.BUILD_NUMBER}, Build autorizada por el developer ${env.CHANGE_AUTHOR}"
