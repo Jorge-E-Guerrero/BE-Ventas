@@ -1,0 +1,45 @@
+name: Pipeline de Drone
+kind: pipeline
+type: docker
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: SonarQube
+    image: maven:3-jdk-11
+    commands:
+      - mvn clean verify sonar:sonar -Dsonar.qualitygate.wait=true -Dsonar.projectKey=Sistema-de-Ventas -Dsonar.host.url=$${SONAR_HOST} -Dsonar.login=$${SONAR_TOKEN}
+    environment:
+      SONAR_HOST:
+        from_secret: SONAR_HOST
+      SONAR_TOKEN:
+        from_secret: SONAR_TOKEN
+    when:
+      event: [push, pull_request] # Correr cuando se hace push a una rama o al abrir un pull request
+      status: [success]
+
+  - name: SonarQube Status Email Notification
+    image: drillster/drone-email
+    settings:
+      host: smtp.gmail.com
+      port: 465
+      username:
+        from_secret: EMAIL_USERNAME
+      password:
+        from_secret: EMAIL_PASSWORD
+      from: "Sistema de Ventas <sistemadeventas@drone.com>"
+      recipients:
+        - guerrero191096@unis.edu.gt
+      subject: "Error de Drone CI Pipeline: Build #${DRONE_BUILD_NUMBER}"
+      body: "El build <b>#${DRONE_BUILD_NUMBER}</b> ha fallado en el branch <b>${DRONE_COMMIT_BRANCH}</b> a causa del Quality Gate de SonarQube.<br><br>Por favor, corrija los errores antes de intentarlo de nuevo."
+    when:
+      event: [push, pull_request]
+      status: [failure] # Mandar el correo cuando falla el build
+
+
+  #image: maven:3-jdk-10
+
+  #- mvn install
+  #- mvn clean verify sonar:sonar -Dsonar.projectKey=SpringBoot -Dsonar.login=sqp_8d1a89321dff2d5154c59015e25d26a352ef8e52
