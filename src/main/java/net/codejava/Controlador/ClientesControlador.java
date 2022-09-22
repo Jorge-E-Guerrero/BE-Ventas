@@ -66,10 +66,6 @@ public class ClientesControlador {
 		
 		}
 
-		if(true==true){
-		
-		}
-		
 		return repositorioClientes.save(n);
 	}
 
