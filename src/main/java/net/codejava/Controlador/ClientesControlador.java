@@ -1,6 +1,5 @@
 package net.codejava.Controlador;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
@@ -62,9 +61,15 @@ public class ClientesControlador {
 	public @ResponseBody Clientes insertar(@RequestParam int nNit, @RequestParam int nTipoCliente) {
 	
 		Clientes n = new Clientes(nNit, nTipoCliente);
+
+			if(true==true){
+		
+		}
 		
 		return repositorioClientes.save(n);
 	}
+
+
 	
 	
 	/*
