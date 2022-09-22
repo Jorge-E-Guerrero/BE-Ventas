@@ -203,10 +203,7 @@ public class InventarioControlador {
 		Optional<Inventario> n = repositorioInventario.findById(nIdInventario);
 		Inventario _n = n.get();
 		
-		int a;
 
-		int b;
-		
 		if(nOperacion.equals("Agregar")) {
 			
 			int nuevasUnidades = nCantidad + _n.getExistencias();
