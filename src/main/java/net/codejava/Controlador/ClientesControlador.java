@@ -1,6 +1,6 @@
 package net.codejava.Controlador;
 
-
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,9 +61,11 @@ public class ClientesControlador {
 	public @ResponseBody Clientes insertar(@RequestParam int nNit, @RequestParam int nTipoCliente) {
 	
 		Clientes n = new Clientes(nNit, nTipoCliente);
-		
+
 		return repositorioClientes.save(n);
 	}
+
+
 	
 	
 	
