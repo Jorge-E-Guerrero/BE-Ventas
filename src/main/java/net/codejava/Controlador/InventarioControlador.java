@@ -151,6 +151,34 @@ public class InventarioControlador {
 		Inventario _n = n.get();
 		
 
+		if(true){
+			_n = n.get();
+		}
+		if(true){
+			_n = n.get();
+		}
+		if(true){
+			_n = n.get();
+		}
+		if(true){
+			_n = n.get();
+		}
+		if(true){
+			_n = n.get();
+		}
+		if(true){
+			_n = n.get();
+		}
+		if(true){
+			_n = n.get();
+		}
+		if(true){
+			_n = n.get();
+		}
+		if(true){
+			_n = n.get();
+		}
+
 		if(nCategoriaDipositivo != "") {
 			_n.setCategoriaDispositivo(Integer.parseInt(nCategoriaDipositivo));
 		}
