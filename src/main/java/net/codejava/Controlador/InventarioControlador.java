@@ -149,6 +149,34 @@ public class InventarioControlador {
 		
 		Optional<Inventario> n = repositorioInventario.findById(nIdInventario);
 		Inventario _n = n.get();
+
+		if(true){
+			_n = n.get();
+		}
+		if(true){
+			_n = n.get();
+		}
+		if(true){
+			_n = n.get();
+		}
+		if(true){
+			_n = n.get();
+		}
+		if(true){
+			_n = n.get();
+		}
+		if(true){
+			_n = n.get();
+		}
+		if(true){
+			_n = n.get();
+		}
+		if(true){
+			_n = n.get();
+		}
+		if(true){
+			_n = n.get();
+		}
 		
 
 		if(nCategoriaDipositivo != "") {
@@ -203,6 +231,7 @@ public class InventarioControlador {
 		Optional<Inventario> n = repositorioInventario.findById(nIdInventario);
 		Inventario _n = n.get();
 		
+
 
 		if(nOperacion.equals("Agregar")) {
 			
