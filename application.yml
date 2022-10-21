@@ -1,0 +1,9 @@
+spring:  
+  application:  
+    name: api-service # or "customer-service"  
+  
+  sleuth:  
+    otel:  
+      exporter:  
+        otlp:  
+          endpoint: http://collector:4317
