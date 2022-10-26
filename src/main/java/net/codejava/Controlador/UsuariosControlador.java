@@ -86,10 +86,25 @@ public class UsuariosControlador {
 		if(n.isEmpty()) {
 			response.put("respuesta", "error");
 		}else {
-			response.put("respuesta", "ok");
+			response.put("respuesta", "ok, Magic");
 		}
 		
 		
 		return response;
 	}
+	
+	
+	@GetMapping("/Branch")
+	public @ResponseBody Map<String,String> getBranch() {
+	
+		HashMap<String,String> response = new HashMap<>();
+		
+		
+		response.put("respuesta", "Production");
+
+		
+		
+		return response;
+	}
+	
 }
