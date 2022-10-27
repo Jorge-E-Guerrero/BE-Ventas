@@ -96,7 +96,7 @@ public class UsuariosControlador {
 	
 		HashMap<String,String> response = new HashMap<>();
 		
-		response.put("respuesta", "UAT");
+		response.put("respuesta", "UAT_Magic_27/10/2022");
 		
 		return response;
 	}
