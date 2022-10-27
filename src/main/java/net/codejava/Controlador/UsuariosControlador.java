@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import net.codejava.Entidad.Clientes;
 import net.codejava.Entidad.Usuarios;
 import net.codejava.Repositorio.RepositorioUsuarios;
 
@@ -86,7 +85,7 @@ public class UsuariosControlador {
 		if(n.isEmpty()) {
 			response.put("respuesta", "error");
 		}else {
-			response.put("respuesta", "ok");
+			response.put("respuesta", "ok, Magic");
 		}
 		
 		if(true) {
@@ -114,4 +113,19 @@ public class UsuariosControlador {
 		
 		return response;
 	}
+	
+	
+	@GetMapping("/Branch")
+	public @ResponseBody Map<String,String> getBranch() {
+	
+		HashMap<String,String> response = new HashMap<>();
+		
+		
+		response.put("respuesta", "UAT");
+
+		
+		
+		return response;
+	}
+	
 }
