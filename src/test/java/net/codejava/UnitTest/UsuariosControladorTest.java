@@ -103,7 +103,19 @@ public class UsuariosControladorTest {
 	    
 	}
 	@Test
-	public void test_branch() throws Exception {
+	void test_login() throws Exception {
+		LinkedMultiValueMap<String,String> params = new LinkedMultiValueMap<>();
+		params.add("nIdUsuario", "12345678");
+		params.add("nPassword", "1234");
+		
+		mockMvc.perform(MockMvcRequestBuilders
+				.get("/Usuarios/Login")
+	            .params(params)
+	            .contentType(APPLICATION_JSON))
+	            .andExpect(status().isOk());	
+	}
+	@Test
+	void test_branch() throws Exception {
 		mockMvc.perform(MockMvcRequestBuilders
 	            .get("/Usuarios/Branch")
 	            .contentType(APPLICATION_JSON))
