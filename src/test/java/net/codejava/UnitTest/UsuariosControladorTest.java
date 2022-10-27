@@ -8,6 +8,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,6 +42,11 @@ public class UsuariosControladorTest {
 	Usuarios RECORD_1 = new Usuarios(1,1,"1234","Juan");
 	Usuarios RECORD_2 = new Usuarios(2,2,"ABC","Pedro");
 	Usuarios RECORD_3 = new Usuarios(3,3,"1234ABC","Sara");
+	
+	HashMap<String,String> response = new HashMap<String, String>() {{
+	    put("respuesta","ok");
+	}};
+	
 	
 	@Test
 	public void obtenerRegistros_success() throws Exception {
@@ -95,5 +101,24 @@ public class UsuariosControladorTest {
 	    
 	    //System.out.println(mvcResult.getResponse().getContentAsString());
 	    
+	}
+	@Test
+	void test_login() throws Exception {
+		LinkedMultiValueMap<String,String> params = new LinkedMultiValueMap<>();
+		params.add("nIdUsuario", "12345678");
+		params.add("nPassword", "1234");
+		
+		mockMvc.perform(MockMvcRequestBuilders
+				.get("/Usuarios/Login")
+	            .params(params)
+	            .contentType(APPLICATION_JSON))
+	            .andExpect(status().isOk());	
+	}
+	@Test
+	void test_branch() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders
+	            .get("/Usuarios/Branch")
+	            .contentType(APPLICATION_JSON))
+	            .andExpect(status().isOk());	
 	}
 }
