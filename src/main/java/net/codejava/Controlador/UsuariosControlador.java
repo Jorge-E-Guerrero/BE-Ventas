@@ -88,44 +88,16 @@ public class UsuariosControlador {
 			response.put("respuesta", "ok, Magic");
 		}
 		
-		if(true) {
-			response.put("respuesta", "ok");
-		}
-		if(true) {
-			response.put("respuesta", "ok");
-		}
-		if(true) {
-			response.put("respuesta", "ok");
-		}
-		if(true) {
-			response.put("respuesta", "ok");
-		}
-		if(true) {
-			response.put("respuesta", "ok");
-		}
-		if(true) {
-			response.put("respuesta", "ok");
-		}
-		if(true) {
-			response.put("respuesta", "ok");
-		}
-		
-		
 		return response;
 	}
-	
 	
 	@GetMapping("/Branch")
 	public @ResponseBody Map<String,String> getBranch() {
 	
 		HashMap<String,String> response = new HashMap<>();
 		
-		
 		response.put("respuesta", "UAT");
-
-		
 		
 		return response;
 	}
-	
 }
